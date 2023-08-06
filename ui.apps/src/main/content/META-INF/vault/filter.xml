@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<workspaceFilter version="1.0">
+    <filter root="/apps/sandbox/clientlibs"/>
+    <filter root="/apps/sandbox/components"/>
+    <filter root="/apps/sandbox/i18n"/>
+</workspaceFilter>

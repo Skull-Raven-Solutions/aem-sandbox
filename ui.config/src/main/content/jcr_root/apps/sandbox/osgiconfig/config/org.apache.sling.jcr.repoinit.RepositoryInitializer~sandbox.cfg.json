@@ -1,0 +1,7 @@
+{
+    "scripts": [
+        "create path (sling:OrderedFolder) /content/dam/sandbox",
+        "create path (nt:unstructured) /content/dam/sandbox/jcr:content",
+        "set properties on /content/dam/sandbox/jcr:content\n  set cq:conf{String} to /conf/sandbox\n  set jcr:title{String} to \"Sandbox Demo Project\"\nend"
+    ]
+}

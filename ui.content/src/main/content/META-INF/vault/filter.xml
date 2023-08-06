@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<workspaceFilter version="1.0">
+    <filter root="/conf/sandbox" mode="merge"/>
+    <filter root="/content/sandbox" mode="merge"/>
+    <filter root="/content/dam/sandbox" mode="merge">
+        <exclude pattern="/content/dam/sandbox(/.*)?"/>
+        <include pattern="/content/dam/sandbox/jcr:content(/.*)?"/>
+    </filter>
+    <filter root="/content/dam/sandbox/asset.jpg" mode="merge"/>
+    <filter root="/content/experience-fragments/sandbox" mode="merge"/>
+</workspaceFilter>
