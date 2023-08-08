@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+Note: The XML version of the OSGi config will not be used, as the cfg.json version has precedence.
+Additionally, this includes scripts that are generated as part of this archetype. Service users start
+at line 16. The JSON file also has these RepoInit scripts from the archetype.
+-->
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" jcr:primaryType="sling:OsgiConfig"
+    references="[]"
+    scripts="[
+    create path (sling:OrderedFolder) /content/dam/sandbox,
+    create path (nt:unstructured) /content/dam/sandbox/jcr:content,
+    set properties on /content/dam/sandbox/jcr:content&#010;
+        set cq:conf{String} to /conf/sandbox&#010;
+        set jcr:title{String} to &quot;Sandbox Demo Project&quot;&#010;
+    end,
+    create service user sandbox-read-service-user,
+    set ACL for sandbox-read-service-user&#010;
+        allow jcr:read on /content/dam/sandbox&#010;
+        allow jcr:read on /conf/sandbox/settings/dam/cfm/models&#010;
+    end,
+    create service user sandbox-write-service-user,
+    set ACL for sandbox-write-service-user&#010;
+        allow jcr:read\,jcr:versionManagement\,rep:write\,crx:replicate\,jcr:lockManagement on /content/dam/sandbox&#010;
+    end,
+]"/>

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+OSGi Mapping depicting the mapping of Service Users to the bundle subservices
+-->
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0"
+    jcr:primaryType="sling:OsgiConfig"
+    user.default=""
+    user.mapping="[sandbox.core:readService=[sandbox-read-service-user],sandbox.core:writeService=[sandbox-write-service-user]]"/>

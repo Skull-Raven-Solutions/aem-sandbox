@@ -19,6 +19,7 @@ import static org.apache.sling.api.resource.ResourceResolver.PROPERTY_RESOURCE_T
 
 import javax.annotation.PostConstruct;
 
+import com.skullraven.core.services.TestService;
 import org.apache.sling.api.resource.Resource;
 import org.apache.sling.api.resource.ResourceResolver;
 import org.apache.sling.models.annotations.Default;
@@ -45,6 +46,9 @@ public class HelloWorldModel {
     @SlingObject
     private ResourceResolver resourceResolver;
 
+    @OSGiService
+    TestService testService;
+
     private String message;
 
     @PostConstruct
@@ -57,6 +61,13 @@ public class HelloWorldModel {
         message = "Hello World!\n"
             + "Resource type is: " + resourceType + "\n"
             + "Current page is:  " + currentPagePath + "\n";
+
+
+        /*
+         * Modified this model to use the TestService and call the read/write methods in it
+         */
+        testService.readResource();
+        testService.writeResource();
     }
 
     public String getMessage() {

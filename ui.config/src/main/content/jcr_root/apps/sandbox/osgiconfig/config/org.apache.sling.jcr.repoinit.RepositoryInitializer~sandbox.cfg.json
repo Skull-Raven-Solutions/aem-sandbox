@@ -1,7 +1,11 @@
 {
-    "scripts": [
-        "create path (sling:OrderedFolder) /content/dam/sandbox",
-        "create path (nt:unstructured) /content/dam/sandbox/jcr:content",
-        "set properties on /content/dam/sandbox/jcr:content\n  set cq:conf{String} to /conf/sandbox\n  set jcr:title{String} to \"Sandbox Demo Project\"\nend"
-    ]
+  "scripts": [
+    "create path (sling:OrderedFolder) /content/dam/sandbox",
+    "create path (nt:unstructured) /content/dam/sandbox/jcr:content",
+    "set properties on /content/dam/sandbox/jcr:content\n  set cq:conf{String} to /conf/sandbox\n  set jcr:title{String} to \"Sandbox Demo Project\"\nend",
+    "create service user sandbox-read-service-user",
+    "set ACL for sandbox-read-service-user\n  allow jcr:read on /content/dam/sandbox\n  allow jcr:read on /conf/sandbox/settings/dam/cfm/models\nend",
+    "create service user sandbox-write-service-user",
+    "set ACL for sandbox-write-service-user\n  allow jcr:read,jcr:versionManagement,rep:write,crx:replicate,jcr:lockManagement on /content/dam/sandbox\nend"
+  ]
 }
